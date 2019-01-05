@@ -1,3 +1,9 @@
+# Ignores the credentials
+credentials.json
+
+# Ignores a local db
+db.json
+
 # Logs
 logs
 *.log

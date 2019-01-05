@@ -1,0 +1,20 @@
+{
+  "name": "JobsFinder",
+  "version": "1.0.0",
+  "description": "A script which parses Upwork RSS feed and sends notifications to Telegram",
+  "main": "index.js",
+  "keywords": [
+    "upwork",
+    "telegram",
+    "rss",
+    "feed"
+  ],
+  "author": "Maxim Bilan",
+  "license": "MIT",
+  "dependencies": {
+    "feedsub": "^0.7.1",
+    "telegraf": "^3.25.5",
+    "lowdb": "^v1.0.0"
+  },
+  "private": true
+}
