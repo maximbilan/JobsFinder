@@ -1,7 +1,7 @@
 # JobsFinder
 A script which parses Upwork RSS feed and sends notifications to Telegram.
 
-<pre>
+```js
 const credentials = require('./credentials.json')
 
 const FeedSub = require('feedsub')
@@ -51,4 +51,4 @@ reader.on('item', (item) => {
 
 reader.start()
 
-</pre>
+```
