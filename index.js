@@ -1,10 +1,10 @@
-const credentials = require('./credentials.json');
+const credentials = require('./credentials.json')
 
-const FeedSub = require('feedsub');
-const rssFeed = credentials.rss_feed;
+const FeedSub = require('feedsub')
+const rssFeed = credentials.rss_feed
 let reader = new FeedSub(rssFeed, {
   interval: 1 // Check feed every 1 minute.
-});
+})
 
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
@@ -32,24 +32,24 @@ bot.use((ctx, next) => {
 })
 
 reader.on('item', (item) => {
-  console.log(item.title);
+  console.log(item.title)
 
   const itemInDb = db.get('feed').find({ link: item.link }).value()
   if (itemInDb) {
-    console.log("This item is already exists:");
-    console.log(itemInDb.link);
+    console.log("This item is already exists:")
+    console.log(itemInDb.link)
   } else {
     db.get('feed').push(item).write()
 
     var message = item.description
-    const oldstring = "<br />";
-    const newstring = "\n";
+    const oldstring = "<br />"
+    const newstring = "\n"
     while (message.indexOf(oldstring) > -1) {
-      message = message.replace(oldstring, newstring);
+      message = message.replace(oldstring, newstring)
     }
 
-    bot.telegram.sendMessage(credentials.telegram_channel, message, Extra.HTML().markup());
+    bot.telegram.sendMessage(credentials.telegram_channel, message, Extra.HTML().markup())
   }
-});
+})
 
-reader.start();
+reader.start()
