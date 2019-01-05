@@ -44,14 +44,7 @@ reader.on('item', (item) => {
     console.log(itemInDb.link)
   } else {
     db.get('feed').push(item).write()
-
     var message = item.description
-    const oldstring = "`<br />`"
-    const newstring = "\n"
-    while (message.indexOf(oldstring) > -1) {
-      message = message.replace(oldstring, newstring)
-    }
-
     bot.telegram.sendMessage(credentials.telegram_channel, message, Extra.HTML().markup())
   }
 })
