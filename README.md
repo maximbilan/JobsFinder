@@ -46,7 +46,7 @@ reader.on('item', (item) => {
     db.get('feed').push(item).write()
 
     var message = item.description
-    const oldstring = "<br />"
+    const oldstring = "`<br />`"
     const newstring = "\n"
     while (message.indexOf(oldstring) > -1) {
       message = message.replace(oldstring, newstring)
