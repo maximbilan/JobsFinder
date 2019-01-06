@@ -52,3 +52,5 @@ reader.on('item', (item) => {
 reader.start()
 
 ```
+
+More information <a href="">https://medium.com/@maximbilan/upwork-jobs-finder-telegram-notifier-6d7557015135</a>.
