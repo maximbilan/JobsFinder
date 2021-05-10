@@ -14,7 +14,7 @@
   "dependencies": {
     "feedsub": "^0.7.1",
     "telegraf": "^3.25.5",
-    "lodash": ">=4.17.19"
+    "lodash": ">=4.17.21"
   },
   "private": true
 }
